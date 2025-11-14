@@ -1,8 +1,8 @@
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)]">
       <main className="mx-auto flex min-h-screen w-full max-w-3xl flex-col justify-center gap-12 px-4 py-16 sm:px-8">
         <div className="flex w-full justify-end">
           <ThemeToggle />

@@ -8,7 +8,7 @@ const STORAGE_KEY = "theme-preference";
 
 const getPreferredTheme = (): Theme => {
   if (typeof window === "undefined") {
-    return "light";
+    return "dark";
   }
 
   const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -16,9 +16,7 @@ const getPreferredTheme = (): Theme => {
     return stored;
   }
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return "dark";
 };
 
 const applyTheme = (theme: Theme) => {
