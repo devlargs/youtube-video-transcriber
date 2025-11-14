@@ -1,8 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --muted-contrast: #94a3b8;
+  --border: #e2e8f0;
+  --surface: #ffffff;
+  --input-background: #f8fafc;
+  --input-border: #e2e8f0;
+  --button-background: #0f172a;
+  --button-foreground: #f8fafc;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #030712;
+  --foreground: #e4e4e7;
+  --muted: #a1a1aa;
+  --muted-contrast: #71717a;
+  --border: #27272a;
+  --surface: #111317;
+  --input-background: #0b0d13;
+  --input-border: #27272a;
+  --button-background: #f4f4f5;
+  --button-foreground: #09090b;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -12,15 +35,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.copy-muted {
+  color: var(--muted);
+}
+
+.copy-muted-contrast {
+  color: var(--muted-contrast);
+}
+
+.surface-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.input-field {
+  background: var(--input-background);
+  border-color: var(--input-border);
+  color: var(--foreground);
+}
+
+.divider-line {
+  background: var(--border);
+}
+
+.primary-button {
+  background: var(--button-background);
+  color: var(--button-foreground);
 }
